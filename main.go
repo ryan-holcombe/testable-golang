@@ -9,7 +9,6 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/jmoiron/sqlx"
 	"github.com/ryan-holcombe/testable-golang/api"
 	"github.com/ryan-holcombe/testable-golang/client"
 	"github.com/ryan-holcombe/testable-golang/dao"
@@ -37,7 +36,7 @@ func main() {
 	if err != nil {
 		log.Fatalf("unable to initialize inventory client")
 	}
-	sqlxDB := sqlx.MustOpen("postgres", *dbConn)
+	sqlxDB := dao.NewPostgresDB(*dbConn)
 	userDAO := dao.NewUserDAO(sqlxDB)
 	userTicketsService := service.NewUserTicketsService(userDAO, inventoryClient)
 	api.RegisterRoutes(mux, userTicketsService)
