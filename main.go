@@ -1,9 +1,9 @@
 package main
 
-//go:generate ./tools/mockery_generate.sh -r --inpackage --dir ./api --testonly --all
-//go:generate ./tools/mockery_generate.sh -r --inpackage --dir ./service --testonly --all
-//go:generate ./tools/mockery_generate.sh -r --inpackage --dir ./dao --testonly --all
-//go:generate ./tools/mockery_generate.sh -r --inpackage --dir ./client --testonly --all
+//go:generate go run github.com/vektra/mockery/v2@v2.9.0 -r --inpackage --dir ./api --testonly --all --case=underscore --disable-version-string
+//go:generate go run github.com/vektra/mockery/v2@v2.9.0 -r --inpackage --dir ./service --testonly --all --case=underscore --disable-version-string
+//go:generate go run github.com/vektra/mockery/v2@v2.9.0 -r --inpackage --dir ./dao --testonly --all --case=underscore --disable-version-string
+//go:generate go run github.com/vektra/mockery/v2@v2.9.0 -r --inpackage --dir ./client --testonly --all --case=underscore --disable-version-string
 
 import (
 	"context"
