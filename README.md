@@ -1,6 +1,7 @@
 # Testable Services in Go
 [![Go](https://github.com/ryan-holcombe/testable-golang/actions/workflows/go.yml/badge.svg)](https://github.com/ryan-holcombe/testable-golang/actions/workflows/go.yml)
 [![codecov](https://codecov.io/gh/ryan-holcombe/testable-golang/branch/main/graph/badge.svg?token=083O6ONW1P)](https://codecov.io/gh/ryan-holcombe/testable-golang)
+[![Go Report Card](https://goreportcard.com/badge/github.com/ryan-holcombe/testable-golang)](https://goreportcard.com/report/github.com/ryan-holcombe/testable-golang)
 
 A simple go server 
 
