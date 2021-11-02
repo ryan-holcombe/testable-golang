@@ -1,4 +1,5 @@
 # Testable Services in Go
+[![Go](https://github.com/ryan-holcombe/testable-golang/actions/workflows/go.yml/badge.svg)](https://github.com/ryan-holcombe/testable-golang/actions/workflows/go.yml)
 
 A simple go server 
 
