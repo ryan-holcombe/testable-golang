@@ -53,6 +53,7 @@ func TestHandleUserTickets(t *testing.T) {
 		req, _ := http.NewRequest(http.MethodGet, fmt.Sprintf("%s/api/userTickets", ts.URL), nil)
 
 		resp, err := ts.Client().Do(req)
+		assert.NoError(t, err)
 		userTicketsJSON, err := io.ReadAll(resp.Body)
 		assert.NoError(t, resp.Body.Close())
 
