@@ -1,7 +1,10 @@
 package api
 
-import "github.com/ryan-holcombe/testable-golang/service"
+import (
+	"context"
+	"github.com/ryan-holcombe/testable-golang/service"
+)
 
 type userTicketsService interface {
-	FindAll() ([]service.UserWithTickets, error)
+	FindAll(ctx context.Context) ([]service.UserWithTickets, error)
 }

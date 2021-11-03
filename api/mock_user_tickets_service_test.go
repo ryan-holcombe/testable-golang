@@ -3,6 +3,8 @@
 package api
 
 import (
+	context "context"
+
 	service "github.com/ryan-holcombe/testable-golang/service"
 	mock "github.com/stretchr/testify/mock"
 )
@@ -12,13 +14,13 @@ type mockUserTicketsService struct {
 	mock.Mock
 }
 
-// FindAll provides a mock function with given fields:
-func (_m *mockUserTicketsService) FindAll() ([]service.UserWithTickets, error) {
-	ret := _m.Called()
+// FindAll provides a mock function with given fields: ctx
+func (_m *mockUserTicketsService) FindAll(ctx context.Context) ([]service.UserWithTickets, error) {
+	ret := _m.Called(ctx)
 
 	var r0 []service.UserWithTickets
-	if rf, ok := ret.Get(0).(func() []service.UserWithTickets); ok {
-		r0 = rf()
+	if rf, ok := ret.Get(0).(func(context.Context) []service.UserWithTickets); ok {
+		r0 = rf(ctx)
 	} else {
 		if ret.Get(0) != nil {
 			r0 = ret.Get(0).([]service.UserWithTickets)
@@ -26,8 +28,8 @@ func (_m *mockUserTicketsService) FindAll() ([]service.UserWithTickets, error) {
 	}
 
 	var r1 error
-	if rf, ok := ret.Get(1).(func() error); ok {
-		r1 = rf()
+	if rf, ok := ret.Get(1).(func(context.Context) error); ok {
+		r1 = rf(ctx)
 	} else {
 		r1 = ret.Error(1)
 	}
