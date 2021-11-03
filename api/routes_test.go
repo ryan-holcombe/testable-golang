@@ -16,10 +16,10 @@ import (
 func TestHandleUserTickets(t *testing.T) {
 	t.Run("service returns error", func(t *testing.T) {
 		mux := http.NewServeMux()
-		userTicketsServiceMock := &mockUserTicketsService{}
-		userTicketsServiceMock.On("FindAll", mock.Anything).Return(nil, errors.New("timeout"))
+		userTicketsService := &mockUserTicketsService{}
+		userTicketsService.On("FindAll", mock.Anything).Return(nil, errors.New("timeout"))
 
-		RegisterRoutes(mux, userTicketsServiceMock)
+		RegisterRoutes(mux, userTicketsService)
 		ts := httptest.NewServer(mux)
 		defer ts.Close()
 
@@ -43,10 +43,10 @@ func TestHandleUserTickets(t *testing.T) {
 				},
 			},
 		}
-		userTicketsServiceMock := &mockUserTicketsService{}
-		userTicketsServiceMock.On("FindAll", mock.Anything).Return(userTickets, nil)
+		userTicketsService := &mockUserTicketsService{}
+		userTicketsService.On("FindAll", mock.Anything).Return(userTickets, nil)
 
-		RegisterRoutes(mux, userTicketsServiceMock)
+		RegisterRoutes(mux, userTicketsService)
 		ts := httptest.NewServer(mux)
 		defer ts.Close()
 
