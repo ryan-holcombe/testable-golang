@@ -3,7 +3,9 @@
 [![codecov](https://codecov.io/gh/ryan-holcombe/testable-golang/branch/main/graph/badge.svg?token=083O6ONW1P)](https://codecov.io/gh/ryan-holcombe/testable-golang)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ryan-holcombe/testable-golang)](https://goreportcard.com/report/github.com/ryan-holcombe/testable-golang)
 
-A simple go server 
+https://medium.com/@rholcombe30/building-go-microservices-focused-on-testability-d6164751275d
+
+A simple go server
 
 ## build tasks
 
